@@ -1,22 +1,16 @@
-shiny:
-  image:
-    repository: blenzi/enr
-    tag: "latest"
+shinyproxy:
+  apps:
+    - id: 02_opendata_enr
+      display-name: EnR
+      description: Shiny app without restricted access (EnR)
+      container-image: blenzi/enr
+      container-cmd: ["R", "-e", "shiny::runApp('app')"]
+      access-groups: []
+
+  proxyConfig:
+    authentication:
+      type: none
+
   ingress:
     enabled: true
     hostname: enr.lab.sspcloud.fr
-  s3:
-    enabled: false
-    existingSecret: myshinyapp-s3
-  postgresql:
-    enabled: false
-    auth:
-      username: myusername
-      database: defaultdb
-      existingSecret: myshinyapp-postgresql
-    containerPorts:
-      postgresql: 5432
-    fullnameOverride: postgresql-db
-    primary:
-      persistence:
-        size: 2Gi
