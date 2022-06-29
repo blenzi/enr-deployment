@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: enr-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: enr-ui
+  template:
+    metadata:
+      labels:
+        app: enr-ui
+    spec:
+      containers:
+      - image: blenzi/enr:latest
+        name: enr-ui
+        ports:
+        - containerPort: 3838
