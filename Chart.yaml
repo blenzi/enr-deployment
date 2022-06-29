@@ -1,7 +1,7 @@
 apiVersion: v2
 name: shinyproxy-deployment-template
-version: 0.1.0
+version: 0.1.4
 dependencies:
   - name: shinyproxy
-    version: 1.0.0
+    version: 1.0.4
     repository: https://inseefrlab.github.io/helm-charts
