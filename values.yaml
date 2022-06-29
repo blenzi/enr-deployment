@@ -8,6 +8,7 @@ shinyproxy:
       access-groups: []
 
   proxyConfig:
+    landingPage: /app/02_opendata_enr
     authentication:
       type: none
 
