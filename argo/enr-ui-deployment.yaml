@@ -2,19 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: enr-deployment
+  labels: 
+    app: enr
 spec:
-  replicas: 1
-  revisionHistoryLimit: 3
+  replicas: 5
   selector:
     matchLabels:
-      app: enr-ui
+      app: enr
   template:
     metadata:
       labels:
-        app: enr-ui
+        app: enr
     spec:
       containers:
-      - image: blenzi/enr:latest
-        name: enr-ui
+      - name: enr
+        image: blenzi/enr
+        env:
+        - name: EnR_app
+          value: enr.kub.sspcloud.fr
         ports:
         - containerPort: 3838
