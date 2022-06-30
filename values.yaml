@@ -1,7 +1,6 @@
 shiny:
   image:
     repository: blenzi/enr
-    tag: "latest"
   ingress:
     enabled: true
     hostname: enr.lab.sspcloud.fr
