@@ -1,6 +1,6 @@
 shiny:
   image:
-    repository: blenzi/enr
+    repository: blenzi/enr_app
     tag: "latest"
   ingress:
     enabled: true
