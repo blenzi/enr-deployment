@@ -2,7 +2,7 @@ shiny:
   image:
     repository: blenzi/enr-app
     imagePullPolicy: Always
-    tag: latest
+    tag: master
   ingress:
     enabled: true
     hostname: enr.lab.sspcloud.fr
