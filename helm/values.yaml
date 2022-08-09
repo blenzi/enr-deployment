@@ -1,11 +1,11 @@
 shiny:
   image:
-    repository: blenzi/enr-shiny
+    repository: blenzi/enr-app
     imagePullPolicy: Always
     tag: latest
   ingress:
     enabled: true
-    hostname: enr-shiny.lab.sspcloud.fr
+    hostname: enr.lab.sspcloud.fr
   s3:
     enabled: true
     existingSecret: app-s3
