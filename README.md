@@ -6,7 +6,7 @@ Les différentes branches de ce package correspondent au déploiement des diffé
 
 ### Chart Helm
 
-Le déploiement de l'application se fait via un chart Helm, basé sur le [template de l'application shiny-app](https://github.com/InseeFrLab/helm-charts-shiny-apps).
+Le déploiement de l'application se fait via un chart Helm, basé sur le [template de l'application shiny-app](https://github.com/InseeFrLab/sspcloud-tutorials/blob/main/deployment/shiny-app.md).
 
 Le fichier `Chart.yaml` contient les métadonnées du chart (nom, version) ainsi que ses dépendances, i.e. les potentiels autres charts Helm dont il hérite. Dans notre cas, on voit que le chart hérite du [chart Shiny](https://github.com/InseeFrLab/helm-charts/tree/master/charts/shiny) d'InseeFrLab. Ce chart spécifie généralement les ressources Kubernetes nécessaires au déploiement d'une application Shiny, de sorte à ce que l'on ait qu'à modifier les valeurs d'instanciation pour déployer notre application.
 
@@ -17,7 +17,7 @@ Le fichier `values.yaml` contient précisément les valeurs que l'on modifie par
 
 ### Accès au stockage objet S3
 
-Pour avoir accès aux données stockées sur MinIO / S3 il faut l'activer dans `values.yaml` et fournir à l'application les informations d'authentification au service (voir [cette recette](https://github.com/blenzi/enr-deployment#utilisation-du-stockage-de-donn%C3%A9es-s3-avec-minio)):
+Pour avoir accès aux données stockées sur MinIO / S3 il faut l'activer dans `values.yaml` et fournir à l'application les informations d'authentification au service (voir [cette recette](https://github.com/InseeFrLab/sspcloud-tutorials/blob/main/deployment/shiny-app.md#utilisation-du-stockage-de-donn%C3%A9es-s3-avec-minio)):
 
 ```yaml
   s3:
