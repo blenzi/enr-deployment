@@ -17,5 +17,5 @@ shiny:
         periodSeconds: 100
   s3:
     enabled: true
-    existingSecret: app-s3
+    existingSecret: enr-s3
   
