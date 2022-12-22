@@ -1,0 +1,21 @@
+shiny:
+  image:
+    repository: blenzi/enr-shiny
+    pullPolicy: Always
+    tag: dev
+  ingress:
+    enabled: true
+    hostname: enr-shiny.lab.sspcloud.fr
+  probe:
+    enabled: false
+    probeValue:
+        livenessProbe:
+          timeoutSeconds: 20
+        readinessProbe:
+          timeoutSeconds: 20
+        startupProbe:
+          timeoutSeconds: 20  
+  s3:
+    enabled: true
+    existingSecret: app-s3
+  
