@@ -6,7 +6,7 @@ shiny:
     enabled: true
     hostname: enr-shiny.lab.sspcloud.fr
   probe:
-    enabled: true
+    enabled: false
   probeValue:
       livenessProbe:
         timeoutSeconds: 30
