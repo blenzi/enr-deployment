@@ -6,7 +6,7 @@ shiny:
     enabled: true
     hostname: enr-shiny.lab.sspcloud.fr
   probe:
-    enabled: false
+    enabled: true
   probeValue:
       livenessProbe:
         timeoutSeconds: 30
@@ -14,8 +14,10 @@ shiny:
         timeoutSeconds: 30
       startupProbe:
         timeoutSeconds: 100
-        periodSeconds: 100
+        periodSeconds: 200
+  resources:
+    requests:
+      cpu: "0.5"
   s3:
     enabled: true
     existingSecret: enr-s3
-  
