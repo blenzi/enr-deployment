@@ -7,14 +7,14 @@ shiny:
     hostname: enr-shiny.lab.sspcloud.fr
   probe:
     enabled: true
-  probeValue:
-      livenessProbe:
-        timeoutSeconds: 30
-      readinessProbe:
-        timeoutSeconds: 30
-      startupProbe:
-        timeoutSeconds: 100
-        periodSeconds: 200
+    probeValue:
+        livenessProbe:
+          timeoutSeconds: 30
+        readinessProbe:
+          timeoutSeconds: 30
+        startupProbe:
+          timeoutSeconds: 100
+          periodSeconds: 200
   resources:
     requests:
       cpu: "0.5"
