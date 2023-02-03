@@ -6,19 +6,19 @@ shiny:
   ingress:
     enabled: true
     hostname: enr.lab.sspcloud.fr
+  probe:
+    enabled: true
+    probeValue:
+        livenessProbe:
+          timeoutSeconds: 30
+        readinessProbe:
+          timeoutSeconds: 30
+        startupProbe:
+          timeoutSeconds: 100
+          periodSeconds: 30
+  resources:
+    requests:
+      cpu: "0.5"
   s3:
     enabled: true
-    existingSecret: app-s3
-  postgresql:
-    enabled: false
-    auth:
-      username: myusername
-      database: defaultdb
-      existingSecret: myshinyapp-postgresql
-    containerPorts:
-      postgresql: 5432
-    fullnameOverride: postgresql-db
-    primary:
-      persistence:
-        size: 2Gi
-  
+    existingSecret: enr-s3
